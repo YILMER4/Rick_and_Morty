@@ -1,0 +1,13 @@
+@font-face {
+    font-family: rick_and_morty ;
+    src: url("../../assets/Splash-Regular.ttf");
+}
+
+.card{
+    background-color: cadetblue;
+    border: solid brown;
+    font-family: rick_and_morty ;
+    width: 25em;
+    height: 30em;
+    border-radius: 2em;
+}

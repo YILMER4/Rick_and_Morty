@@ -1,0 +1,12 @@
+nav {
+    background-color: aliceblue;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+}
+
+nav img{
+    filter: hue-rotate(100deg);
+}

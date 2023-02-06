@@ -1,9 +1,19 @@
+import { useState } from "react";
+
 export default function SearchBar(props) {
-   const {onSearch}=props;
+   const [character, setCharacter]= useState(0);
+
+   const handleSearch = (e)=>{
+      let {value}= e.target;
+      setCharacter(value);
+   };
+
    return (
       <div>
-         <input type='search' />
-         <button onClick={()=> onSearch ("Futuro ID del personaje") }>Agregar</button>
+         <input type='search' onChange={handleSearch} />
+         <button onClick={()=>props.onSearch(character)}>
+         Agregar
+         </button>
       </div>
    );
 }
