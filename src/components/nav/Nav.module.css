@@ -1,4 +1,4 @@
-nav {
+.nav {
     background-color: aliceblue;
     border-radius: 10px;
     display: flex;
@@ -7,6 +7,6 @@ nav {
     margin-bottom: 20px;
 }
 
-nav img{
+.nav img{
     filter: hue-rotate(100deg);
 }

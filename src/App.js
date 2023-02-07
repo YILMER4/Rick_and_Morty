@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './App.css';
 import Cards from './components/cards/Cards.jsx';
 import Nav from './components/nav/Nav.jsx';
+//import SearchBar from './components/searchbar/SearchBar';
+//import characters from "./data.js"
 
 function App () {
   // creamos un estado donde tengamos el array de personajes
@@ -9,8 +11,8 @@ function App () {
 
 // funcion onclose
 
-  function onclose(){
-    setCharacters(characters.filter((element)=>element.name !==name))
+  const onClose =(id)=>  {
+    setCharacters(characters.filter(char=>char.id !==id))
   }
 
   function onSearch(character){
@@ -29,11 +31,11 @@ function App () {
   return (
     <div className='App' style={{ padding: '25px' }}>
       <div>
-        <nav onSearch={onSearch} /> 
+        <Nav onSearch={onSearch} /> 
       </div>
       <div>
         <Cards
-          characters={characters} onclose={onclose}
+          characters={characters} onClose={onClose}
         />
       </div>
     </div>

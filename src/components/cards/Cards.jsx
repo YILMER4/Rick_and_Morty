@@ -3,7 +3,8 @@ import Card from '../card/Card.jsx'
 import styles from "./Cards.module.css";
 
 export default function Cards(props) {
-   const { characters } = props;
+   const { characters, onClose } = props;
+
    return ( 
       <div className={styles.container}> 
          {
@@ -14,7 +15,7 @@ export default function Cards(props) {
             species={char.species}
             gender={char.gender}
             image={char.image}
-            onClose={()=>props.onClose(char.name)}
+            onClose={()=> onClose(char.id)}
          />
          ))}
       </div>
