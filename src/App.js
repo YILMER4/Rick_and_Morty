@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import './App.css';
-import Cards from './components/cards/Cards.jsx';
-import Nav from './components/nav/Nav.jsx';
 //import SearchBar from './components/searchbar/SearchBar';
 //import characters from "./data.js"
+import { Routes, Route } from 'react-router-dom';
+import Nav from './components/nav/Nav.jsx';
+import Cards from './components/cards/Cards.jsx';
+import About from "./components/about/About.jsx";
+import Detail from "./components/detail/Detail.jsx";
 
 function App () {
   // creamos un estado donde tengamos el array de personajes
@@ -30,16 +33,28 @@ function App () {
 
   return (
     <div className='App' style={{ padding: '25px' }}>
-      <div>
-        <Nav onSearch={onSearch} /> 
-      </div>
-      <div>
-        <Cards
-          characters={characters} onClose={onClose}
-        />
-      </div>
+      
+        <div>
+          <Nav onSearch={onSearch} /> 
+        </div>
+        <Routes>
+          <Route 
+            path="/home" 
+            element={<Cards characters={characters} 
+            onClose={onClose}/>} 
+          />
+          <Route path="/about" element={<About/>} />
+          <Route path="/detail/:detailId" element={<Detail/>} />
+        </Routes>
     </div>
   )
 }
 
 export default App
+
+/*  <Routes>
+        <Route/>
+        <Route/>
+        <Route/>
+        <Route/>
+      </Routes>*/
