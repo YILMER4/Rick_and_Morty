@@ -1,13 +1,12 @@
 import React from "react";
-import Form from "./Form.module.css";
-import { validation } from "./Validation";
-import { useEffect } from "react";
+import styles from "./Form.module.css";
+import { Validation } from "./Validation.js";
 
 
-export default function Form(){
+export default function Form (props){
 
     const [userData, setUserData] = React.useState({ 
-        username: '', 
+        username: " ", 
         password: '' 
     });
 
@@ -22,21 +21,17 @@ export default function Form(){
         setUserData({
             ...userData,[e.target.name]:e.target.value});
         
-        setErrors(validation({...userData,[e.target.name]:e.target.value}))
+        setErrors(Validation({...userData,[e.target.name]:e.target.value}))
     };
 
-    useEffect(() => {
-        !access && navigate('/');
-    }, [access]);
-
-    function handleSubmit (e){
+    const handleSubmit = (e) =>{
         e.preventDefault();
-
+        props.login(userData);
     }
 
         return(
             <div>
-                <Form>
+                <form onSubmit={handleSubmit} >
                     <label htmlFor="username" >Username</label>
                     <input 
                         id="username" 
@@ -60,7 +55,7 @@ export default function Form(){
                     />
                     <p className="danger">{errors.password}</p>
                     <button type="submit" >LOGIN</button>
-                </Form>
+                </form>
             </div>
     );
 }
