@@ -12,7 +12,8 @@ export default function Form (props){
 
     const [errors, setErrors] = React.useState({ 
         username: '', 
-        password: '' 
+        password: '',
+
     });
 
     function handleInputChange (e){

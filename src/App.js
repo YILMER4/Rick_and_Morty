@@ -18,13 +18,15 @@ function App () {
   const[characters, setCharacters] = useState([]);
   
   const [access, setAccess] = useState(false);
-  const username = 'ejemplo@gmail.com';
+  const username = 'yilzam228@gmail.com';
   const password = '1password';
 
   function login(userData) {
     if (userData.password === password && userData.username === username) {
         setAccess(true);
         navigate('/home');
+    }else{
+      alert("usuario o contraseña invalida");
     }
   }
 
@@ -50,11 +52,14 @@ function App () {
     !access && navigate('/');
 }, [access]);
 
+  const logout =()=>{
+    setAccess(false);
+  }
 
   return (
     <div className='App' style={{ padding: '25px' }}>
         <div>
-          {location.pathname !== "/" && <Nav onSearch={onSearch} /> }
+          {location.pathname !== "/" && <Nav onSearch={onSearch} logout={logout} /> }
         </div>
         <Routes>
           <Route path="/"  element={<Form login={login} />} />

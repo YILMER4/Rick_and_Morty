@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default  function Nav (props){
 
     return(
-        <div>
+        <div className={styles.container} >
             <Link to="/about">
                 <h6>About</h6>
             </Link >
@@ -17,8 +17,11 @@ export default  function Nav (props){
             </Link> 
             <SearchBar className={styles.nav}
                 onSearch={props.onSearch}
-                //posiblemente quitarle el props pero la funcion  recibirian un {onSearch}
+                //posiblemente quitarle el props pero la funcion  recibirian un {onSearch}          
             />
+            <Link to="/">
+            <button onClick={props.loguot}>Logout</button>
+            </Link>
         </div>
     );
 }

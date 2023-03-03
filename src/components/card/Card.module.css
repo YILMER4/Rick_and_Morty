@@ -8,6 +8,7 @@
     border: solid brown;
     font-family: rick_and_morty ;
     width: 25em;
-    height: 30em;
+    height: 35em;
     border-radius: 2em;
+    padding: 10px;
 }
