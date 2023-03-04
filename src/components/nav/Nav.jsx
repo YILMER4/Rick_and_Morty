@@ -15,13 +15,17 @@ export default  function Nav (props){
             <Link to="/home">
                 <h6>Home</h6>
             </Link> 
+            <Link to="/favorites" >
+                <button>Favorites</button>
+            </Link>
             <SearchBar className={styles.nav}
                 onSearch={props.onSearch}
                 //posiblemente quitarle el props pero la funcion  recibirian un {onSearch}          
             />
             <Link to="/">
-            <button onClick={props.loguot}>Logout</button>
+                <button onClick={props.loguot}>Logout</button>
             </Link>
+
         </div>
     );
 }

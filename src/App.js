@@ -10,6 +10,7 @@ import Cards from './components/cards/Cards.jsx';
 import About from "./components/about/About.jsx";
 import Detail from "./components/detail/Detail.jsx";
 import Form from './components/form/Form.jsx';
+import Favorites from "./components/favorites/Favorites.jsx"
 
 function App () {
   const location = useLocation();
@@ -70,6 +71,7 @@ function App () {
           />
           <Route path="/about" element={<About/>} />
           <Route path="/detail/:detailId" element={<Detail/>} />
+          <Route path="/favorites" element={<Favorites/>} />
         </Routes>
     </div>
   )
